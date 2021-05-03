@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Client App</string>
+    <string name="Access_Name" />
+    <string name="textaccessname">textAccessName</string>
+    <string name="Access_Code" />
+    <string name="USE">USE</string>
+    <string name="close">Close</string>
+</resources>
