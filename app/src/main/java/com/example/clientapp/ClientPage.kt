@@ -1,9 +1,11 @@
 package com.example.clientapp
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 
 class ClientPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,12 +13,40 @@ class ClientPage : AppCompatActivity() {
         setContentView(R.layout.activity_client_page)
 
 
-        var button3 = findViewById(R.id.button3) as Button
+        var back3_btn = findViewById(R.id.back3_btn) as Button
+        var button4 = findViewById(R.id.button4) as Button
 
 
-        button3.setOnClickListener {
-            startActivity(Intent(this@ClientPage, MainActivity::class.java))
+        back3_btn.setOnClickListener {
+            val alertDialog = AlertDialog.Builder(this)
+            alertDialog.setCancelable(false)
+            alertDialog.setMessage("Do you want to proceed?")
+            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
+                startActivity(Intent(this@ClientPage, MainActivity::class.java))
+            })
+            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
+                dialog.cancel()
+            })
+            val alert = alertDialog.create();
+            alert.setTitle("Do you want to Exit?")
+            alert.show()
+
+
+            }
+        button4.setOnClickListener {
+            val alertDialog = AlertDialog.Builder(this)
+            alertDialog.setCancelable(false)
+            alertDialog.setMessage("Do you want to proceed?")
+            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
+                startActivity(Intent(this@ClientPage, ViewLogs::class.java))
+            })
+            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
+                dialog.cancel()
+            })
+            val alert = alertDialog.create();
+            alert.setTitle("Do you want to Exit?")
+            alert.show()
+        }
 
         }
     }
-}

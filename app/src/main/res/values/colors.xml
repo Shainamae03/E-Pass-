@@ -10,4 +10,6 @@
     <color name="maroon">#800000</color>
     <color name="grey">#808080</color>
     <color name="yellow">#edbd50</color>
+    <color name="gold">#DAA520</color>
+    <color name="green">#96c896</color>
 </resources>

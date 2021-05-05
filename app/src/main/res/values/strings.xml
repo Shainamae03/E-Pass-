@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">Client App</string>
     <string name="Access_Name" />
-    <string name="textaccessname">textAccessName</string>
+    <string name="AccessName">textAccessName</string>
     <string name="Access_Code" />
-    <string name="USE">USE</string>
     <string name="close">Close</string>
+    <string name="view_logs">View Logs</string>
+    <string name="help">HELP</string>
+    <string name="access_name">Access Name</string>
+    <string name="show_qr_pass">show qr pass</string>
+    <string name="faq">FAQ</string>
 </resources>

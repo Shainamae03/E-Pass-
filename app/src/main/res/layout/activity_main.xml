@@ -5,8 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@color/maroon"
+    android:background="@drawable/login4"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/help"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="72dp"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/faq"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:passwordToggleEnabled="true"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,11 +31,11 @@
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.329"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintVertical_bias="0.109"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -29,28 +43,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Access Name"
-        android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278"
+        app:layout_constraintVertical_bias="0.35"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
         android:id="@+id/AccessName"
-        android:layout_width="350dp"
+        android:textColor="@color/black"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="396dp"
+        android:layout_marginBottom="332dp"
         android:autofillHints="@string/Access_Name"
-        android:background="@color/white"
+        android:background="@drawable/border"
         android:ems="10"
         android:hint="@string/Access_Name"
         android:padding="10dp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEGHIJKLMNOPQRSTUVWXYZ"
+        android:maxLines="1"
+        android:maxLength="8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -60,26 +78,26 @@
         tools:ignore="MissingConstraints,TextFields,UnknownId" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/accesscode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Access code"
-        android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431"
+        app:layout_constraintVertical_bias="0.571"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="208dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
@@ -91,41 +109,44 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/code"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:digits="abcdefghijklmnopqwrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
             android:hint="@string/Access_Code"
             android:inputType="textPassword"
+            android:maxLength="8"
+            android:maxLines="1"
             android:padding="5dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <Button
         android:id="@+id/button"
-        android:backgroundTint="@color/yellow"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="256dp"
+        android:layout_marginEnd="204dp"
         android:layout_marginBottom="128dp"
-        android:text="@string/USE"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/show_qr_pass"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintVertical_bias="0.148"
         app:passwordToggleEnabled="true"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button2"
-        android:backgroundTint="@color/yellow"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="96dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="128dp"
+        android:backgroundTint="@color/yellow"
         android:text="@string/close"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />

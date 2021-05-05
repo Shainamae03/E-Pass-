@@ -8,29 +8,14 @@
     tools:context=".ClientPage">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:textColor="@color/white"
-        android:text="Scan Qr Code"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139"
-        tools:ignore="HardcodedText" />
-
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/back3_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="88dp"
         android:backgroundTint="@color/yellow"
-        android:text="Exit"
+        android:text="BACK"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +25,8 @@
         android:id="@+id/imageView3"
         android:layout_width="200dp"
         android:layout_height="350dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="216dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="232dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_launcher_background"
@@ -51,14 +36,57 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="224dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="180dp"
         android:maxLines="10"
-        android:text="Reminder: You only have 24hrs to use this \n after tha it will automatically updated "
+        android:text="REMINDER:YOU ONLY HAVE 24HRS TO USE THIS \n AFTER THAT IT WILL AUTOMATICALLY CHANGE "
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="228dp"
+        android:layout_marginBottom="88dp"
+        android:textColor="@color/black"
+        android:text="@string/view_logs"
+        android:backgroundTint="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Chronometer
+        android:id="@+id/c_meter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="384dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#092FEC"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="QR PASS"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
