@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClientApp">
-        <activity android:name=".ViewLogs"></activity>
+        <activity android:name=".Menu"></activity>
+        <activity android:name=".ViewLogs" />
         <activity android:name=".HelpActivity" />
-        <activity android:name=".ClientPage3" />
         <activity android:name=".ClientPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
