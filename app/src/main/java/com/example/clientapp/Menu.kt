@@ -13,11 +13,11 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
 
-        val qrpass = findViewById(R.id.qrpass) as CardView
+        val qrpasscode = findViewById(R.id.qrpass) as CardView
         val my_log = findViewById(R.id.my_log) as CardView
         val back = findViewById(R.id.back) as CardView
 
-        qrpass.setOnClickListener {
+        qrpasscode.setOnClickListener {
             val alertDialog = AlertDialog.Builder(this)
             alertDialog.setCancelable(false)
             alertDialog.setMessage("Do you want to proceed?")

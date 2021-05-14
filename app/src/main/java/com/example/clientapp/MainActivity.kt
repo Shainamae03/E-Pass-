@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             val Access_Name = AccessName.text
             val Access_code = code.text
-            startActivity(Intent(this@MainActivity, ClientPage::class.java))
+            startActivity(Intent(this@MainActivity, Menu::class.java))
 
         }
 

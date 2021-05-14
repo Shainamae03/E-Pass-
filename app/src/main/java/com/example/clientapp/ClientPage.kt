@@ -22,7 +22,7 @@ class ClientPage : AppCompatActivity() {
             alertDialog.setCancelable(false)
             alertDialog.setMessage("Do you want to proceed?")
             alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-                startActivity(Intent(this@ClientPage, MainActivity::class.java))
+                startActivity(Intent(this@ClientPage, Menu::class.java))
             })
             alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
                 dialog.cancel()
