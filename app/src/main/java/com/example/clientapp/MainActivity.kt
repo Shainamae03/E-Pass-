@@ -1,51 +1,72 @@
 package com.example.clientapp
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
-import android.text.format.DateUtils.LENGTH_LONG
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.text.TextUtils
+import android.util.Log
+import android.widget.*
 import android.widget.Toast.*
-import androidx.appcompat.app.AlertDialog
-import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_LONG
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+
+
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var auth: FirebaseAuth
+
     @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var AccessName = findViewById<EditText>(R.id.AccessName)
-        var code = findViewById<EditText>(R.id.code)
-        var button = findViewById<Button>(R.id.button)
+        auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+
+        login()
+    }
+
+    private fun login(){
+
+        val AccessName = findViewById<EditText>(R.id.AccessName)
+        val code = findViewById<EditText>(R.id.code)
+        val button = findViewById<Button>(R.id.button)
         val help = findViewById(R.id.help) as TextView
 
         button.setOnClickListener {
-            val Access_Name = AccessName.text
-            val Access_code = code.text
-            startActivity(Intent(this@MainActivity, Menu::class.java))
+            if (TextUtils.isEmpty(AccessName.text.toString())) {
+                AccessName.setError("Please enter your email!")
+                return@setOnClickListener
+            } else if (TextUtils.isEmpty(code.text.toString())) {
+                code.setError("Please enter password!")
+                return@setOnClickListener
+            }
+
+            auth.signInWithEmailAndPassword(
+                AccessName.text.toString(),
+                code.text.toString()
+            )
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        startActivity(Intent(this@MainActivity, ClientPage::class.java))
+                        finish()
+
+                    } else {
+                        makeText(this@MainActivity, "Login failed", LENGTH_LONG)
+                            .show()
+                    }
+                }
+
+
 
         }
-
 
         help.setOnClickListener {
-            val alertDialog = AlertDialog.Builder(this)
-            alertDialog.setCancelable(false)
-            alertDialog.setMessage("Do you want to proceed?")
-            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-                startActivity(Intent(this@MainActivity , HelpActivity::class.java))
-            })
-            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
-                dialog.cancel()
-            })
-            val alert = alertDialog.create();
-            alert.setTitle("Do you want to Exit?")
-            alert.show()
+            startActivity(Intent( this@MainActivity, HelpActivity::class.java))
         }
     }
+
 }

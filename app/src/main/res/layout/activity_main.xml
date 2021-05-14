@@ -8,16 +8,17 @@
     android:background="@drawable/bg1"
     tools:context=".MainActivity">
 
+
     <Button
         android:id="@+id/help"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="664dp"
         android:background="@drawable/button"
         android:backgroundTint="@color/yellow"
-        android:text="@string/faq"
+        android:text="?"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,11 +35,13 @@
         android:textStyle="bold"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.649"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026"
+        app:layout_constraintVertical_bias="0.084"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -46,106 +49,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Access Name"
+        android:layout_marginStart="16dp"
+        android:text="Please enter your login info"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.454" />
 
     <EditText
         android:id="@+id/AccessName"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="412dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="325dp"
         android:autofillHints="@string/Access_Name"
-        android:background="@drawable/border"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEGHIJKLMNOPQRSTUVWXYZ"
-        android:ems="10"
+        android:background="@drawable/btn_bg_by_lever"
         android:hint="@string/Access_Name"
-        android:maxLength="10"
-        android:maxLines="1"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
-        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/enter_name"
-        app:layout_constraintTop_toBottomOf="@+id/enter_name"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints,TextFields,UnknownId" />
-
-
-    <TextView
-        android:id="@+id/accesscode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Access Code"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.246"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474"
-        tools:ignore="HardcodedText,MissingConstraints" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="272dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="@+id/enter_details"
-        app:layout_constraintTop_toBottomOf="@+id/enter_details"
-        app:layout_constraintVertical_bias="0.148"
-        app:passwordToggleEnabled="true"
-        tools:ignore="UnknownId">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/code"
-            android:layout_width="300dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:background="@drawable/border"
-            android:digits="abcdefghijklmnopqwrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-            android:hint="@string/Access_Code"
-            android:inputType="textPassword"
-            android:maxLength="8"
-            android:maxLines="1"
-            android:padding="5dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginEnd="196dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="168dp"
         android:background="@drawable/button"
-        android:text="@string/show_qr_pass"
+        android:text="Login"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:passwordToggleEnabled="true"
         tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="265dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/code"
+            android:layout_width="350dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:autofillHints="@string/Access_Code"
+            android:background="@drawable/btn_bg_by_lever"
+            android:hint="@string/Access_Code"
+            android:inputType="textPassword"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

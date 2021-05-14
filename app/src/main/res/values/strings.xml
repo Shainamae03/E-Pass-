@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Client App</string>
-    <string name="Access_Name" />
+    <string name="Access_Name">Email Address</string>
     <string name="AccessName">textAccessName</string>
-    <string name="Access_Code" />
+    <string name="Access_Code">Password </string>
     <string name="close">Close</string>
     <string name="view_logs">View Logs</string>
     <string name="col1">LogID</string>
