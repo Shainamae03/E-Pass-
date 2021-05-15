@@ -2,16 +2,14 @@ package com.example.clientapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Bundle
+import android.text.InputFilter
+import android.text.InputFilter.LengthFilter
 import android.text.TextUtils
-import android.util.Log
 import android.widget.*
 import android.widget.Toast.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -46,18 +44,22 @@ class MainActivity : AppCompatActivity() {
             }
 
             auth.signInWithEmailAndPassword(
-                AccessName.text.toString(),
-                code.text.toString()
+                    AccessName.text.toString(),
+                    code.text.toString()
             )
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-                        startActivity(Intent(this@MainActivity, ClientPage::class.java))
+                        startActivity(Intent(this@MainActivity, Menu::class.java))
                         finish()
 
                     } else {
                         makeText(this@MainActivity, "Login failed", LENGTH_LONG)
                             .show()
                     }
+                    val maxLength = 10
+                    val filters = arrayOfNulls<InputFilter>(1)
+                    filters[0] = LengthFilter(maxLength)
+                    code.setFilters(filters)
                 }
 
 
@@ -65,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         help.setOnClickListener {
-            startActivity(Intent( this@MainActivity, HelpActivity::class.java))
+            startActivity(Intent(this@MainActivity, HelpActivity::class.java))
         }
     }
 

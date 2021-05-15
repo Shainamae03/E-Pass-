@@ -22,11 +22,11 @@
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/qr"
         android:layout_width="200dp"
         android:layout_height="350dp"
         android:layout_marginEnd="104dp"
-        android:layout_marginBottom="232dp"
+        android:layout_marginBottom="288dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_launcher_background"
@@ -52,9 +52,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="228dp"
         android:layout_marginBottom="88dp"
-        android:textColor="@color/black"
-        android:text="@string/view_logs"
         android:backgroundTint="@color/yellow"
+        android:text="@string/view_logs"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -74,6 +74,7 @@
         tools:ignore="UnknownId" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="30dp"
@@ -88,5 +89,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.072"
         tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/clientcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="466dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
