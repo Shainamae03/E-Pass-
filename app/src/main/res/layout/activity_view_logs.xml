@@ -1,143 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="@drawable/bg1">
+    tools:context=".Client_history_table"
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <TableLayout
+
+    <TextView
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLIENT LOG"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/maroon"
+                android:layout_marginTop="20dp">
+
+                <TableRow
+                    android:background="@color/violet">
+
+                    <TextView
+                        android:layout_width="78dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"
+                        android:padding="10sp"
+                        android:text="@string/col1"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="19dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10sp"
+                        android:text="Log Stat"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:padding="10sp"
+                        android:text="Date"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:padding="10sp"
+                        android:text="Time"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:padding="10sp"
+                        android:text="Gate"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".5"
+                        android:padding="10sp"
+                        android:text="SGID"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"/>
+                </TableRow>
+            </TableLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/clientlog"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/client_item" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/backtohome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gold"
-        android:gravity="center"
-        android:layout_margin="10dp">
+        android:text="Back" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/maroon">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/col1"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/col2"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/col3"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/col4"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/col5"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/col6"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1LogID"
-                android:textSize="12sp" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Log_Stat"
-                android:textSize="12sp" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Date"
-                android:textSize="12sp" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Time"
-                android:textSize="12sp" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1Gate"
-                android:textSize="12sp" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="7"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="@string/row1SG_ID"
-                android:textSize="12sp" />
-
-
-
-
-        </TableRow>
-
-
-    </TableLayout>
-
-
-
-</RelativeLayout>
+</LinearLayout>

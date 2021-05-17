@@ -31,10 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         val AccessName = findViewById<EditText>(R.id.AccessName)
         val code = findViewById<EditText>(R.id.code)
-        val button = findViewById<Button>(R.id.button)
-        val help = findViewById(R.id.help) as TextView
+        val login = findViewById<Button>(R.id.login)
+        val help = findViewById(R.id.help) as ImageView
 
-        button.setOnClickListener {
+       login.setOnClickListener {
             if (TextUtils.isEmpty(AccessName.text.toString())) {
                 AccessName.setError("Please enter your email!")
                 return@setOnClickListener
