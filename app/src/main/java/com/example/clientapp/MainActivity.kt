@@ -10,11 +10,14 @@ import android.widget.*
 import android.widget.Toast.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var auth: FirebaseAuth
+    var databaseReference : DatabaseReference? = null
+    var database: FirebaseDatabase? = null
 
     @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,10 +52,31 @@ class MainActivity : AppCompatActivity() {
             )
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-                        startActivity(Intent(this@MainActivity, Menu::class.java))
-                        finish()
+                        auth = FirebaseAuth.getInstance()
+                        database = FirebaseDatabase.getInstance()
+                        val currentUserAdmin = auth.currentUser
+                        val RegisteredUserID = currentUserAdmin.getUid()
 
-                    } else {
+                        databaseReference = database?.reference!!.child("ClientDb").child(RegisteredUserID)
+
+                        databaseReference?.addValueEventListener(object : ValueEventListener {
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                val AdminDB = snapshot.child("as").value.toString()
+                                if (AdminDB.equals("Client")) {
+                                    startActivity(Intent(this@MainActivity, ClientPage::class.java))
+
+                                } else {
+                                    Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
+                                            .show()
+                                }
+
+                            }
+
+                            override fun onCancelled(error: DatabaseError) {
+                                TODO("Not yet implemented")
+                            }
+                        })
+                        }else {
                         makeText(this@MainActivity, "Login failed", LENGTH_LONG)
                             .show()
                     }
