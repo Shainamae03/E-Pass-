@@ -61,8 +61,8 @@ class MainActivity : AppCompatActivity() {
 
                         databaseReference?.addValueEventListener(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
-                                val AdminDB = snapshot.child("as").value.toString()
-                                if (AdminDB.equals("Client")) {
+                                val ClientDb = snapshot.child("as").value.toString()
+                                if (ClientDb.equals("Client")) {
                                     startActivity(Intent(this@MainActivity, ClientPage::class.java))
 
                                 } else {
