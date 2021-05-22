@@ -58,26 +58,30 @@ class MainActivity : AppCompatActivity() {
                         val RegisteredUserID = currentUserAdmin.getUid()
 
                         databaseReference = database?.reference!!.child("ClientDb").child(RegisteredUserID)
+                        if (currentUserAdmin.isEmailVerified) {
+                            databaseReference?.addValueEventListener(object : ValueEventListener {
+                                override fun onDataChange(snapshot: DataSnapshot) {
+                                    val ClientDb = snapshot.child("as").value.toString()
+                                    if (ClientDb.equals("Client")) {
+                                        startActivity(Intent(this@MainActivity, ClientPage::class.java))
 
-                        databaseReference?.addValueEventListener(object : ValueEventListener {
-                            override fun onDataChange(snapshot: DataSnapshot) {
-                                val ClientDb = snapshot.child("as").value.toString()
-                                if (ClientDb.equals("Client")) {
-                                    startActivity(Intent(this@MainActivity, ClientPage::class.java))
+                                    } else {
+                                        Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
+                                                .show()
+                                    }
 
-                                } else {
-                                    Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
-                                            .show()
                                 }
 
-                            }
-
-                            override fun onCancelled(error: DatabaseError) {
-                                TODO("Not yet implemented")
-                            }
-                        })
-                        }else {
-                        makeText(this@MainActivity, "Login failed", LENGTH_LONG)
+                                override fun onCancelled(error: DatabaseError) {
+                                    TODO("Not yet implemented")
+                                }
+                            })
+                        } else {
+                            makeText(this@MainActivity, "Login failed", LENGTH_LONG)
+                                    .show()
+                        }
+                    }else {
+                        makeText(this@MainActivity, "Login failed! Please verfu your email", LENGTH_LONG)
                             .show()
                     }
                     val maxLength = 10
