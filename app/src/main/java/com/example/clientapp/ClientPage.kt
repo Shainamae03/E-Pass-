@@ -6,8 +6,6 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -69,13 +67,12 @@ class ClientPage : AppCompatActivity() {
             alert.setTitle("Approve Upon Entry")
             alert.show()
         }
-        var database = FirebaseDatabase.getInstance().reference
-
-        val user = auth.currentUser
-        val userreference = databaseReference?.child(user?.uid!!)
-        val clientcode = findViewById<TextView>(R.id.clientcode)
-        val firtname = findViewById<TextView>(R.id.firtname)
-        val lastname = findViewById<TextView>(R.id.lastname)
+            var database = FirebaseDatabase.getInstance().reference
+            val user = auth.currentUser
+            val userreference = databaseReference?.child(user?.uid!!)
+            val clientcode = findViewById<TextView>(R.id.clientcode)
+            val firtname = findViewById<TextView>(R.id.firtname)
+            val lastname = findViewById<TextView>(R.id.lastname)
 
 
 
@@ -100,9 +97,9 @@ class ClientPage : AppCompatActivity() {
                         for (x in 0 until width) {
                             for (y in 0 until height) {
                                 bmp.setPixel(
-                                    x,
-                                    y,
-                                    if (bitMatrix[x, y]) Color.BLACK else Color.WHITE
+                                        x,
+                                        y,
+                                        if (bitMatrix[x, y]) Color.BLACK else Color.WHITE
                                 )
                             }
                         }
@@ -119,40 +116,5 @@ class ClientPage : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         })
-
-        var startTime = System.currentTimeMillis()
-
-        //adding 24 hours milliseconds with current time of milliseconds to make it 24 hours milliseconds.
-
-        //adding 24 hours milliseconds with current time of milliseconds to make it 24 hours milliseconds.
-        var milliseconds =
-            System.currentTimeMillis() + 86400000 // 24 hours = 86400000 milliseconds
-
-
-        val cdt: CountDownTimer = object : CountDownTimer(milliseconds, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                startTime = startTime - 1
-                val serverUptimeSeconds = (millisUntilFinished - startTime) / 1000
-
-                // now you repalce txtViewHours,  txtViewMinutes, txtViewSeconds by your textView.
-                val hoursLeft = String.format("%d:", serverUptimeSeconds % 86400 / 3600)
-                val txtViewHours = findViewById(R.id.txtViewHours) as TextView
-                txtViewHours.setText(hoursLeft)
-                Log.d("hoursLeft", hoursLeft)
-                val minutesLeft = String.format("%d.", serverUptimeSeconds % 86400 % 3600 / 60)
-                val txtViewMinutes = findViewById(R.id.txtViewMinutes) as TextView
-                txtViewMinutes.setText(minutesLeft)
-                Log.d("minutesLeft", minutesLeft)
-                val secondsLeft = String.format("%d", serverUptimeSeconds % 86400 % 3600 % 60)
-                val txtViewSeconds = findViewById(R.id.txtViewSeconds) as TextView
-                txtViewSeconds.setText(secondsLeft)
-                Log.d("secondsLeft", secondsLeft)
-            }
-
-            override fun onFinish() {
-            }
-        }
-
-        cdt.start()
     }
 }

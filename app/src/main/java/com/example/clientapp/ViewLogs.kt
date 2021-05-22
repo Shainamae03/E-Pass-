@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
+
 class ViewLogs : AppCompatActivity() {
 
     private lateinit var dbref: DatabaseReference
@@ -27,8 +28,8 @@ class ViewLogs : AppCompatActivity() {
         setContentView(R.layout.activity_view_logs)
 
         getWindow().setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
         getSupportActionBar()?.hide();
 
@@ -52,7 +53,7 @@ class ViewLogs : AppCompatActivity() {
 
 
         clientlog = findViewById(R.id.clientlog)
-        clientlog.layoutManager = LinearLayoutManager(this,)
+        clientlog.layoutManager = LinearLayoutManager(this, )
         clientlog.setHasFixedSize(true)
 
 
@@ -82,7 +83,10 @@ class ViewLogs : AppCompatActivity() {
             }
 
         })
+
+
     }
-
-
 }
+
+
+
