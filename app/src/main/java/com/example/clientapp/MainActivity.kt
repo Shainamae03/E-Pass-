@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.*
 import android.widget.Toast.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -31,10 +32,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun login(){
 
-        val AccessName = findViewById<EditText>(R.id.AccessName)
-        val code = findViewById<EditText>(R.id.code)
-        val button = findViewById<Button>(R.id.button)
-        val help = findViewById(R.id.help) as TextView
+        val AccessName = findViewById<TextInputEditText>(R.id.Username)
+        val code = findViewById<TextInputEditText>(R.id.adminpass)
+        val button = findViewById<Button>(R.id.login)
+        val help = findViewById<ImageButton>(R.id.help)
 
         button.setOnClickListener {
             if (TextUtils.isEmpty(AccessName.text.toString())) {

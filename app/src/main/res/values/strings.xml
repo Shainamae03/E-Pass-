@@ -21,4 +21,6 @@
     <string name="access_name">Access Name</string>
     <string name="show_qr_pass">show qr pass</string>
     <string name="faq">FAQ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
