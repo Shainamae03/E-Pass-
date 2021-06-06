@@ -4,76 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_menus"
+    android:background="@drawable/bg1"
     tools:context=".ClientPage">
 
 
-    <ImageButton
+    <Button
         android:id="@+id/back3_btn"
-        android:layout_width="67dp"
-        android:layout_height="61dp"
-        android:layout_marginEnd="328dp"
-        android:layout_marginBottom="636dp"
-        android:background="@drawable/ic_baseline_chevron_left_24"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/button"
         android:text="BACK"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/qr"
         android:layout_width="200dp"
         android:layout_height="350dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="232dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="284dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:ignore="MissingConstraints" />
+        app:srcCompat="@drawable/ic_launcher_background" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="172dp"
         android:maxLines="10"
         android:text="REMINDER:YOU ONLY HAVE 24HRS TO USE THIS \n AFTER THAT IT WILL AUTOMATICALLY CHANGE "
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints"
-        android:gravity="center_vertical"/>
+       />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="92dp"
-        android:backgroundTint="@color/yellow"
-        android:text="@string/view_logs"
+        android:layout_marginEnd="184dp"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/button"
         android:textColor="@color/black"
+        android:text="@string/view_logs"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center_vertical"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Chronometer
-        android:id="@+id/c_meter"
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="384dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#092FEC"
-        android:textSize="36sp"
+        android:padding="30dp"
+        android:text="QR PASS"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="UnknownId" />
+        app:layout_constraintVertical_bias="0.025" />
+
+    <TextView
+        android:id="@+id/clientcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="324dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/firtname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="300dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="300dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -84,11 +121,11 @@
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072"
-        tools:ignore="HardcodedText"/>
+        app:layout_constraintVertical_bias="0.025" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

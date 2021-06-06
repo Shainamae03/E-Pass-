@@ -45,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@color/grey"
                 tools:ignore="UselessLeaf">
 
                 <ImageView
@@ -57,8 +58,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="QRPass"
-                    android:textColor="@color/white" />
+                    android:text="QRPASS"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
@@ -78,6 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@color/grey"
                 tools:ignore="UselessLeaf">
 
                 <ImageView
@@ -90,8 +92,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="My Log"
-                    android:textColor="@color/white" />
+                    android:text="MY LOG"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
@@ -112,6 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@color/grey"
                 tools:ignore="UselessLeaf">
 
                 <ImageView
@@ -124,8 +127,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Back"
-                    android:textColor="@color/white" />
+                    android:text="LOGOUT"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
