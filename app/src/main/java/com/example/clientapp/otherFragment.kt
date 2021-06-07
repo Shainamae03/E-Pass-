@@ -1,10 +1,14 @@
 package com.example.clientapp
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +38,29 @@ class otherFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_other, container, false)
+        val view:View = inflater!!.inflate(R.layout.fragment_other, container, false)
+
+
+        view.findViewById<Button>(R.id.logout).setOnClickListener {
+            activity?.let{
+                val alertDialog = AlertDialog.Builder(it)
+                alertDialog.setCancelable(false)
+                alertDialog.setMessage("Do you want to proceed?")
+                alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
+                    startActivity(Intent(it, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                    it.finish()
+                    System.exit(0)
+
+                })
+                alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
+                    dialog.cancel()
+                })
+                val alert = alertDialog.create();
+                alert.setTitle("Do you want to exit?")
+                alert.show()
+            }
+        }
+    return view
     }
 
     companion object {
