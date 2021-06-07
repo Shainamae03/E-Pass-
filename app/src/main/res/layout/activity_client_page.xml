@@ -32,9 +32,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="20dp"
+        android:text="Client_Code"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/black"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -44,8 +45,9 @@
         android:id="@+id/firtname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/white"
+        android:text="First_Name"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -54,8 +56,9 @@
         android:id="@+id/lastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/white"
+        android:text="Last_Name"
+        android:textColor="@color/black"
+        android:fontFamily="@font/open_sans_semibold"
         android:textSize="20dp"
         android:textStyle="bold"
        />
@@ -73,25 +76,27 @@
         android:layout_gravity="center_horizontal"
         />
 
-    <Button
+    <ImageButton
         android:layout_marginTop="20dp"
         android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:textColor="@color/black"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:src="@drawable/button_view_history"
         android:text="@string/view_logs"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        />
 
-    <Button
+    <ImageButton
         android:layout_marginTop="10dp"
         android:id="@+id/back3_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:text="BACK"
-        android:textColor="@color/black"/>
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:background="@color/transparent"
+        android:src="@drawable/button_back"/>
 
 
 </LinearLayout>
