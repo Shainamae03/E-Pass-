@@ -26,8 +26,11 @@ class Menu : AppCompatActivity() {
                     val intent = Intent(this@Menu, ClientPage::class.java)
                     startActivity(intent)
                 }
-                R.id.logs_fragment -> replaceFragment(logsfragment)
-                R.id.other_fragment -> replaceFragment(logsfragment)
+                R.id.logs_fragment -> {
+                    val intent = Intent(this@Menu, ViewLogs::class.java)
+                    startActivity(intent)
+                }
+                R.id.other_fragment -> replaceFragment(otherfragment)
             }
             true
         }

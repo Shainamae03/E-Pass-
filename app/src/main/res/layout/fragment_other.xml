@@ -6,9 +6,176 @@
     tools:context=".otherFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/headerblue"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:background="@color/teal_200"
+            android:fitsSystemWindows="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="39dp"
+                android:fontFamily="@font/open_sans_extrabold"
+                android:gravity="center_horizontal"
+                android:text="CLIENT PROFILE"
+                android:textColor="@color/black"
+                android:textSize="33sp" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="client@gmail.com"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"/>
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="ITEM 1"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/transparent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="ITEM 2"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/transparent" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="ITEM 3"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/transparent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="LOG-OUT"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/transparent" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 </FrameLayout>

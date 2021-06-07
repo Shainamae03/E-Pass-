@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Client_history_table"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="@drawable/bg_menus">
 
 
     <TextView
@@ -92,7 +93,7 @@
             </TableLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/clientlog"
-                android:background="@color/white"
+                android:background="@color/zxing_transparent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/client_item" />
