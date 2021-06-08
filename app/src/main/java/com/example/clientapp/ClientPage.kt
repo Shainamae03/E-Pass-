@@ -36,8 +36,8 @@ class ClientPage : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
         databaseReference = database?.reference!!.child("ClientDb")
 
-        val button4 = findViewById<Button>(R.id.button4) as Button
-        val back3_btn = findViewById<Button>(R.id.back3_btn) as Button
+        val button4 = findViewById<ImageButton>(R.id.button4)
+        val back3_btn = findViewById<ImageButton>(R.id.back3_btn)
 
         button4.setOnClickListener {
             val alertDialog = AlertDialog.Builder(this)

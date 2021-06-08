@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Changepass">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+       <EditText
+           android:id="@id/current_password"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Current Password"/>
+
+        <EditText
+            android:id="@id/newpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Current Password"/>
+        <EditText
+            android:id="@id/confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Current Password"/>
+
+
+        <ImageButton
+            android:id="@+id/confirm_button"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/button"
+            android:scaleType="fitCenter"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/cancel_mainscreen"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:layout_below="@+id/login"
+            android:background="@color/zxing_transparent"
+            android:text="Cancel"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+</RelativeLayout>

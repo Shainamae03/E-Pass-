@@ -2,11 +2,8 @@ package com.example.clientapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.widget.*
 import android.widget.Toast.*
 import androidx.appcompat.app.AppCompatActivity
@@ -34,10 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         val AccessName = findViewById<TextInputEditText>(R.id.Username)
         val code = findViewById<TextInputEditText>(R.id.adminpass)
-        val button = findViewById<Button>(R.id.login)
+        val imageButton = findViewById<ImageButton>(R.id.login)
         val help = findViewById<ImageButton>(R.id.help)
 
-        button.setOnClickListener {
+       imageButton.setOnClickListener {
             if (TextUtils.isEmpty(AccessName.text.toString())) {
                 AccessName.setError("Please enter your email!")
                 return@setOnClickListener

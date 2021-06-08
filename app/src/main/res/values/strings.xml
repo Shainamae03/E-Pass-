@@ -15,6 +15,7 @@
     <string name="access_name">Access Name</string>
     <string name="show_qr_pass">show qr pass</string>
     <string name="faq">FAQ</string>
+    <string name="hello_blank_fragment"></string>
     <string name="time_hours_minutes_seconds_formatter" translatable="false">%02d:%02d:%02d</string>
     <string name="time_minutes_seconds_formatter" translatable="false">%02d:%02d</string>
     <string name="time_seconds_formatter" translatable="false">%02d</string>
