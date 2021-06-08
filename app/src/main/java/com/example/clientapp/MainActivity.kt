@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 val AdminDB = snapshot.child("as").value.toString()
                                 if (AdminDB.equals("Client")) {
-                                    startActivity(Intent(this@MainActivity, ClientPage::class.java))
+                                    startActivity(Intent(this@MainActivity, Menu::class.java))
 
                                 } else {
                                     Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                         makeText(this@MainActivity, "Login failed", LENGTH_LONG)
                             .show()
                     }
-                    val maxLength = 10
+                    val maxLength = 16
                     val filters = arrayOfNulls<InputFilter>(1)
                     filters[0] = LengthFilter(maxLength)
                     code.setFilters(filters)

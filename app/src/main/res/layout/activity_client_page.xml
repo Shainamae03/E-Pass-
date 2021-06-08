@@ -16,7 +16,7 @@
         android:layout_marginBottom="112dp"
         android:background="@drawable/button"
         android:text="BACK"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -51,7 +51,7 @@
         android:layout_marginEnd="184dp"
         android:layout_marginBottom="112dp"
         android:background="@drawable/button"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:text="@string/view_logs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -100,11 +100,11 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/lastname"
+        android:id="@+id/department"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="272dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="20dp"

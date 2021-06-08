@@ -50,7 +50,7 @@
                 android:textColor="@color/black"
                 android:inputType="textEmailAddress"
                 android:background="@drawable/textbox"
-                android:maxLength="20"/>
+                android:maxLength="27"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>

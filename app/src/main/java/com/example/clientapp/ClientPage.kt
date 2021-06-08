@@ -72,7 +72,7 @@ class ClientPage : AppCompatActivity() {
             val userreference = databaseReference?.child(user?.uid!!)
             val clientcode = findViewById<TextView>(R.id.clientcode)
             val firtname = findViewById<TextView>(R.id.firtname)
-            val lastname = findViewById<TextView>(R.id.lastname)
+            val department = findViewById<TextView>(R.id.department)
 
 
 
@@ -81,7 +81,7 @@ class ClientPage : AppCompatActivity() {
 
                 clientcode.text = snapshot.child("clientcode").value.toString()
                 firtname.text = snapshot.child("firtname").value.toString()
-                lastname.text = snapshot.child("lastname").value.toString()
+                department.text = snapshot.child("department").value.toString()
                 ivQRCode = findViewById(R.id.qr)
                 //qr code generate
                 val data = clientcode.text.toString()
