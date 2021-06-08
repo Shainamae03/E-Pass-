@@ -1,131 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
-    tools:context=".ClientPage">
+    android:background="@drawable/bg_menus"
+    tools:context=".ClientPage"
+    android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/back3_btn"
-        android:layout_width="150dp"
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="112dp"
-        android:background="@drawable/button"
-        android:text="BACK"
+        android:padding="30dp"
+        android:text="QR PASS"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/qr"
         android:layout_width="200dp"
-        android:layout_height="350dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="284dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/ic_launcher_background" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="172dp"
-        android:maxLines="10"
-        android:text="REMINDER:YOU ONLY HAVE 24HRS TO USE THIS \n AFTER THAT IT WILL AUTOMATICALLY CHANGE "
-        android:textColor="@color/white"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-       />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="184dp"
-        android:layout_marginBottom="112dp"
-        android:background="@drawable/button"
-        android:textColor="@color/white"
-        android:text="@string/view_logs"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:text="QR PASS"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
-
     <TextView
         android:id="@+id/clientcode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="324dp"
         android:gravity="center"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="20dp"
+        android:text="Client_Code"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/black"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
+        android:layout_gravity="center_horizontal"
         android:id="@+id/firtname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="300dp"
-        android:text="TextView"
-        android:textColor="@color/white"
+        android:text="First_Name"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/department"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/lastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="272dp"
-        android:text="TextView"
-        android:textColor="@color/white"
+        android:text="Last_Name"
+        android:textColor="@color/black"
+        android:fontFamily="@font/open_sans_semibold"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+       />
+
 
     <TextView
+        android:layout_marginTop="30dp"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:text="QR PASS"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        android:maxLines="10"
+        android:text="REMINDER:YOU ONLY HAVE 24HRS TO USE THIS \n AFTER THAT IT WILL AUTOMATICALLY CHANGE "
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <ImageButton
+        android:layout_marginTop="20dp"
+        android:id="@+id/button4"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:src="@drawable/button_view_history"
+        android:text="@string/view_logs"
+        />
+
+    <ImageButton
+        android:layout_marginTop="10dp"
+        android:id="@+id/back3_btn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:background="@color/transparent"
+        android:src="@drawable/button_back"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

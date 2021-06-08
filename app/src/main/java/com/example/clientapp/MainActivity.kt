@@ -2,22 +2,22 @@ package com.example.clientapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
-import android.text.InputFilter
-import android.text.InputFilter.LengthFilter
 import android.text.TextUtils
+import android.util.Log
 import android.widget.*
 import android.widget.Toast.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+
 
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var auth: FirebaseAuth
-    var databaseReference : DatabaseReference? = null
-    var database: FirebaseDatabase? = null
 
     @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +32,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun login(){
 
-        val AccessName = findViewById<EditText>(R.id.AccessName)
-        val code = findViewById<EditText>(R.id.code)
-        val login = findViewById<Button>(R.id.login)
-        val help = findViewById(R.id.help) as ImageView
+        val AccessName = findViewById<TextInputEditText>(R.id.Username)
+        val code = findViewById<TextInputEditText>(R.id.adminpass)
+        val button = findViewById<Button>(R.id.login)
+        val help = findViewById<ImageButton>(R.id.help)
 
-       login.setOnClickListener {
+        button.setOnClickListener {
             if (TextUtils.isEmpty(AccessName.text.toString())) {
                 AccessName.setError("Please enter your email!")
                 return@setOnClickListener
@@ -47,43 +47,18 @@ class MainActivity : AppCompatActivity() {
             }
 
             auth.signInWithEmailAndPassword(
-                    AccessName.text.toString(),
-                    code.text.toString()
+                AccessName.text.toString(),
+                code.text.toString()
             )
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-                        auth = FirebaseAuth.getInstance()
-                        database = FirebaseDatabase.getInstance()
-                        val currentUserAdmin = auth.currentUser
-                        val RegisteredUserID = currentUserAdmin.getUid()
+                        startActivity(Intent(this@MainActivity, ClientPage::class.java))
+                        finish()
 
-                        databaseReference = database?.reference!!.child("ClientDb").child(RegisteredUserID)
-
-                        databaseReference?.addValueEventListener(object : ValueEventListener {
-                            override fun onDataChange(snapshot: DataSnapshot) {
-                                val AdminDB = snapshot.child("as").value.toString()
-                                if (AdminDB.equals("Client")) {
-                                    startActivity(Intent(this@MainActivity, Menu::class.java))
-
-                                } else {
-                                    Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
-                                            .show()
-                                }
-
-                            }
-
-                            override fun onCancelled(error: DatabaseError) {
-                                TODO("Not yet implemented")
-                            }
-                        })
-                        }else {
+                    } else {
                         makeText(this@MainActivity, "Login failed", LENGTH_LONG)
                             .show()
                     }
-                    val maxLength = 16
-                    val filters = arrayOfNulls<InputFilter>(1)
-                    filters[0] = LengthFilter(maxLength)
-                    code.setFilters(filters)
                 }
 
 
@@ -91,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         help.setOnClickListener {
-            startActivity(Intent(this@MainActivity, HelpActivity::class.java))
+            startActivity(Intent( this@MainActivity, HelpActivity::class.java))
         }
     }
 
