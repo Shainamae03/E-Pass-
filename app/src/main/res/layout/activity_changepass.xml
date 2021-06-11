@@ -12,33 +12,7 @@
         android:orientation="vertical"
         android:layout_centerVertical="true">
 
-       <EditText
-           android:id="@id/current_password"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:hint="Current Password"/>
 
-        <EditText
-            android:id="@id/newpassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Current Password"/>
-        <EditText
-            android:id="@id/confirm_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Current Password"/>
-
-
-        <ImageButton
-            android:id="@+id/confirm_button"
-            android:layout_width="240dp"
-            android:layout_height="60dp"
-            android:background="@android:color/transparent"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/button"
-            android:scaleType="fitCenter"
-            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/cancel_mainscreen"
