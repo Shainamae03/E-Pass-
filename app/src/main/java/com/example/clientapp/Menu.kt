@@ -1,93 +1,49 @@
 package com.example.clientapp
 
-import android.content.DialogInterface
+import android.annotation.TargetApi
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
-import android.widget.FrameLayout
+import android.view.MenuItem
+import android.view.View
+import android.view.WindowManager
+import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.fragment.app.Fragment
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.bottomnavigation.BottomNavigationMenu
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+
+
 
 class Menu : AppCompatActivity() {
 
-    private val qrfragment =  qrFragment()
-    private val logsfragment =  logFragment()
-    private val otherfragment =  otherFragment()
+    lateinit var authAdmin: FirebaseAuth
+    lateinit var toggle: ActionBarDrawerToggle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
-        replaceFragment(qrfragment)
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomnavigation)
-        bottomNavigationView.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.qr_fragment -> {
-                    val intent = Intent(this@Menu, ClientPage::class.java)
-                    startActivity(intent)
-                }
-                R.id.logs_fragment -> {
-                    val intent = Intent(this@Menu, ViewLogs::class.java)
-                    startActivity(intent)
-                }
-                R.id.other_fragment -> replaceFragment(otherfragment)
-            }
-            true
+
+        getSupportActionBar()?.hide();
+        window.decorView.apply {
+            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
 
-        /* val qrpasscode = findViewById(R.id.qrpass) as CardView
-        val my_log = findViewById(R.id.my_log) as CardView
-        val back = findViewById(R.id.back) as CardView
-
-        qrpasscode.setOnClickListener {
-            val alertDialog = AlertDialog.Builder(this)
-            alertDialog.setCancelable(false)
-            alertDialog.setMessage("Do you want to proceed?")
-            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-                startActivity(Intent(this@Menu, ClientPage::class.java))
-            })
-            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
-                dialog.cancel()
-            })
-            val alert = alertDialog.create();
-            alert.setTitle("Approve Upon Entry")
-            alert.show()
-        }
-        my_log.setOnClickListener {
-            val alertDialog = AlertDialog.Builder(this)
-            alertDialog.setCancelable(false)
-            alertDialog.setMessage("Do you want to proceed?")
-            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-                startActivity(Intent(this@Menu, ViewLogs::class.java))
-            })
-            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
-                dialog.cancel()
-            })
-            val alert = alertDialog.create();
-            alert.setTitle("Do you want to leave this page?")
-            alert.show()
-        }
-        back.setOnClickListener {
-            val alertDialog = AlertDialog.Builder(this)
-            alertDialog.setCancelable(false)
-            alertDialog.setMessage("Do you want to proceed?")
-            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-                startActivity(Intent(this@Menu, MainActivity::class.java))
-            })
-            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
-                dialog.cancel()
-            })
-            val alert = alertDialog.create();
-            alert.setTitle("Do you want to exit?")
-            alert.show()
-        }
-    }*/
     }
-    private fun replaceFragment(fragment: Fragment){
-        if(fragment !=null){
-            val transaction = supportFragmentManager.beginTransaction()
-            val frameLayout = findViewById<FrameLayout>(R.id.container)
-            transaction.replace(R.id.container,fragment)
-            transaction.commit()
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item))
+        {
+            return true
         }
-}}
+        return super.onOptionsItemSelected(item)
+    }
+}
