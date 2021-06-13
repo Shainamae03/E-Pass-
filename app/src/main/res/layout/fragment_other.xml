@@ -28,7 +28,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="0dp"
             android:fontFamily="@font/open_sans_semibold"
-            android:text="Admin Name"
+            android:text="Client Name"
             android:textColor="@color/black"
             android:textSize="35dp" />
 
