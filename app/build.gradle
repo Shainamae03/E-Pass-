@@ -50,5 +50,4 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.7.0'
     implementation 'com.google.zxing:core:3.2.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.0.2@aar'
-    implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha11"
 }

@@ -39,6 +39,11 @@ class MainActivity : AppCompatActivity() {
         val imageButton = findViewById<ImageButton>(R.id.login)
         val help = findViewById<ImageButton>(R.id.help)
         val cancel_mainscreen = findViewById<Button>(R.id.cancel_mainscreen)
+        val forgotpass = findViewById<Button>(R.id.forgotpass)
+
+        forgotpass.setOnClickListener{
+            startActivity(Intent( this@MainActivity, Changepass::class.java))
+        }
 
 
 
