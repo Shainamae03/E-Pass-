@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var auth: FirebaseAuth
 
     @SuppressLint("WrongViewCast")
@@ -37,6 +36,11 @@ class MainActivity : AppCompatActivity() {
         val help = findViewById<ImageButton>(R.id.help)
         val cancel_mainscreen = findViewById<Button>(R.id.cancel_mainscreen)
 
+
+
+        help.setOnClickListener {
+            startActivity(Intent(this@MainActivity, HelpActivity::class.java))
+        }
         cancel_mainscreen.setOnClickListener{
             val alertDialog = AlertDialog.Builder(this)
             alertDialog.setCancelable(false)
@@ -83,14 +87,12 @@ class MainActivity : AppCompatActivity() {
                         }
 
 
-                            help.setOnClickListener {
-                                startActivity(Intent(this@MainActivity, HelpActivity::class.java))
                             }
 
                         }
                     }
 
         }
-    }
+
 
 
