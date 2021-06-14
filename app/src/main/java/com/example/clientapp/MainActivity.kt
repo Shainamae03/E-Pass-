@@ -78,8 +78,8 @@ class MainActivity : AppCompatActivity() {
                             totalAttempts--;
 
                     } else{
-                        Toast.makeText(this, "Maximum number of attempts exceeded", Toast.LENGTH_SHORT)
-                                    .show()
+                            Toast.makeText(this, "Maximum number of attempts exceeded", Toast.LENGTH_SHORT)
+                                        .show()
                         }
 
 
