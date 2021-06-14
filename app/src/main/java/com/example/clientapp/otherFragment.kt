@@ -65,12 +65,17 @@ class otherFragment : Fragment() {
         })
 
         view.findViewById<ImageButton>(R.id.client_logout).setOnClickListener {
-            activity?.let{
+            activity?.let {
                 val alertDialog = AlertDialog.Builder(it)
                 alertDialog.setCancelable(false)
                 alertDialog.setMessage("Do you want to proceed?")
                 alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-                    startActivity(Intent(it, MainActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                    startActivity(
+                        Intent(
+                            it,
+                            MainActivity::class.java
+                        ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    )
                     it.finish()
                     System.exit(0)
 
@@ -81,6 +86,12 @@ class otherFragment : Fragment() {
                 val alert = alertDialog.create();
                 alert.setTitle("Do you want to exit?")
                 alert.show()
+            }
+            view.findViewById<ImageButton>(R.id.clientchangepass).setOnClickListener {
+                activity?.let {
+                    val intent = Intent(it, Changepass::class.java)
+                    it.startActivity(intent)
+                }
             }
         }
     return view
@@ -105,4 +116,5 @@ class otherFragment : Fragment() {
                 }
             }
     }
+
 }

@@ -47,20 +47,13 @@
 
 
         <RelativeLayout
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="100dp"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:layout_gravity="center">
 
-            <ImageButton
-                android:id="@+id/myepass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                android:layout_marginTop="80dp"
-                android:src="@drawable/button_my_epass"/>
+
 
             <ImageButton
                 android:id="@+id/clientchangepass"
@@ -69,18 +62,8 @@
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/myepass"
                 android:src="@drawable/button_change_pass"/>
 
-            <ImageButton
-                android:id="@+id/clientlogs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:scaleType="centerCrop"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/clientchangepass"
-                android:src="@drawable/button_client_logs"/>
 
             <ImageButton
                 android:id="@+id/client_logout"
@@ -88,10 +71,8 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/clientlogs"
-                android:src="@drawable/button_logout"
-                android:layout_marginBottom="20dp"/>
+                android:layout_below="@+id/clientchangepass"
+                android:src="@drawable/button_logout" />
 
 
 
