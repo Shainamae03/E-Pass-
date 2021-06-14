@@ -6,6 +6,7 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -72,7 +73,8 @@ class ClientPage : AppCompatActivity() {
             val userreference = databaseReference?.child(user?.uid!!)
             val clientcode = findViewById<TextView>(R.id.clientcode)
             val firtname = findViewById<TextView>(R.id.firtname)
-            val department = findViewById<TextView>(R.id.department)
+
+
 
 
 
@@ -81,9 +83,10 @@ class ClientPage : AppCompatActivity() {
 
                 clientcode.text = snapshot.child("clientcode").value.toString()
                 firtname.text = snapshot.child("firtname").value.toString()
-                department.text = snapshot.child("department").value.toString()
                 ivQRCode = findViewById(R.id.qr)
+
                 //qr code generate
+                val data1 = firtname.text.toString()
                 val data = clientcode.text.toString()
                 if (data.isEmpty()) {
                     Toast.makeText(this@ClientPage, "no data", Toast.LENGTH_LONG).show()

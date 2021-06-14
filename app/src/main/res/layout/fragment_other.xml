@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context=".otherFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -17,14 +18,32 @@
             android:layout_height="280dp"
             android:background="@drawable/bg_client_profile"
             android:fitsSystemWindows="true"/>
+
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/adminName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="client@gmail.com"
-            android:layout_marginTop="10dp"
-            android:textSize="25sp"
+            android:layout_below="@+id/header"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="Client Name"
             android:textColor="@color/black"
-            android:fontFamily="sans-serif-condensed-medium"/>
+            android:textSize="35dp" />
+
+        <TextView
+            android:id="@+id/adminmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/adminName"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="0dp"
+            android:textSize="12sp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="admin_name@gmail.com"
+            android:textColor="@color/black" />
 
 
         <RelativeLayout
@@ -40,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="80dp"
                 android:src="@drawable/button_my_epass"/>
 
             <ImageButton
@@ -69,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_below="@+id/clientlogs"
                 android:src="@drawable/button_logout"
                 android:layout_marginBottom="20dp"/>

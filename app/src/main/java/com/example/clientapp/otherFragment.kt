@@ -8,7 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +24,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class otherFragment : Fragment() {
+    lateinit var auth: FirebaseAuth
+    var databaseReference: DatabaseReference? = null
+    var database: FirebaseDatabase? = null
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -31,7 +37,9 @@ class otherFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-    }
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
+        databaseReference = database?.reference!!.child("ClientDb")    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +48,21 @@ class otherFragment : Fragment() {
         // Inflate the layout for this fragment
         val view:View = inflater!!.inflate(R.layout.fragment_other, container, false)
 
+        val user = auth.currentUser
+        val userreference = databaseReference?.child(user?.uid!!)
+        userreference?.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val adminName = snapshot.child("firtname").value.toString()
+                val adminmail = snapshot.child("email").value.toString()
+                view.findViewById<TextView>(R.id.adminName).text = adminName
+                view.findViewById<TextView>(R.id.adminmail).text = adminmail
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
         view.findViewById<ImageButton>(R.id.client_logout).setOnClickListener {
             activity?.let{

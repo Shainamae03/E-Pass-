@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClientApp">
         <activity android:name=".Changepass"></activity>
+        <activity android:name=".ForgotPass"></activity>
         <activity android:name=".Menu" />
         <activity android:name=".ViewLogs" />
         <activity android:name=".HelpActivity" />

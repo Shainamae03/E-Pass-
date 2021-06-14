@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser
+        if(currentUser != null){
+            startActivity(Intent(this@MainActivity, Menu::class.java))
+            finish()
+        }
         login()
     }
 
