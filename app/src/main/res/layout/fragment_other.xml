@@ -54,6 +54,16 @@
             android:layout_gravity="center">
 
 
+            <ImageButton
+                android:id="@+id/faq"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_faq" />
+
+
+
 
             <ImageButton
                 android:id="@+id/clientchangepass"
@@ -61,8 +71,10 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/button_change_pass"/>
+                android:layout_marginTop="15dp"
+                android:src="@drawable/button_change_pass"
+                android:layout_below="@+id/faq"
+                />
 
 
             <ImageButton
@@ -71,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
+                android:layout_marginTop="15dp"
                 android:layout_below="@+id/clientchangepass"
                 android:src="@drawable/button_logout" />
 

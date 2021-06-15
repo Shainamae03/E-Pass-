@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".question4"
+    android:background="@drawable/bg_menus"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Does FOMICS back-up data?"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"/>
+
+    <ScrollView
+        android:layout_marginTop="50dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_weight="1">
+
+        <TextView
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            android:id="@+id/how_to_do"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:text="Fomics back up all the neccessary information needed, but information given to us will not be disclosed unless given order person of authority." />
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/back2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="back"/>
+    </LinearLayout>
+
+
+</LinearLayout>

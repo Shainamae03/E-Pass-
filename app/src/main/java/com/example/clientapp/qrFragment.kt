@@ -28,7 +28,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class qrFragment : Fragment() {
 
-    lateinit var auth: FirebaseAuth
+    lateinit var auth : FirebaseAuth
     var databaseReference: DatabaseReference? = null
     var database: FirebaseDatabase? = null
 

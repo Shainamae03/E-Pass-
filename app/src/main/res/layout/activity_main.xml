@@ -23,18 +23,6 @@
             android:layout_marginTop="30dp"
             android:src="@drawable/fomicslogo" />
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/help"
-            android:background="@drawable/ic_baseline_help_24"
-            android:layout_marginLeft="150dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"/>
-
-
-
 
     </RelativeLayout>
 

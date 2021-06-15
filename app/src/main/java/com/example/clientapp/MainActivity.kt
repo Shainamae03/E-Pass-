@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         val AccessName = findViewById<TextInputEditText>(R.id.Username)
         val code = findViewById<TextInputEditText>(R.id.adminpass)
         val imageButton = findViewById<ImageButton>(R.id.login)
-        val help = findViewById<ImageButton>(R.id.help)
         val cancel_mainscreen = findViewById<Button>(R.id.cancel_mainscreen)
         val forgotpass = findViewById<Button>(R.id.forgotpass)
 
@@ -46,10 +45,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-        help.setOnClickListener {
-            startActivity(Intent(this@MainActivity, HelpActivity::class.java))
-        }
         cancel_mainscreen.setOnClickListener{
             val alertDialog = AlertDialog.Builder(this)
             alertDialog.setCancelable(false)

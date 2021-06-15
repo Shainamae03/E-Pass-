@@ -93,6 +93,13 @@ class otherFragment : Fragment() {
                     it.startActivity(intent)
                 }
             }
+
+            view.findViewById<ImageButton>(R.id.faq).setOnClickListener {
+                activity?.let {
+                    val intent = Intent(it, HelpActivity::class.java)
+                    it.startActivity(intent)
+                }
+            }
         }
     return view
     }

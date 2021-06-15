@@ -22,37 +22,21 @@
         android:textSize="35sp"
         android:fontFamily="@font/bitter_bold" />
 
-    <ImageButton
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/button5"
-        android:layout_width="380dp"
-        android:layout_height="100dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/question2"/>
 
     <ImageButton
         android:layout_gravity="center_horizontal"
-        android:id="@+id/button6"
+        android:id="@+id/question2"
         android:layout_width="380dp"
         android:layout_height="100dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/question3"/>
 
-    <ImageButton
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/button7"
-        android:layout_width="380dp"
-        android:layout_height="100dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/question4"/>
+
 
     <ImageButton
         android:layout_gravity="center_horizontal"
-        android:id="@+id/button8"
+        android:id="@+id/question3"
         android:layout_width="380dp"
         android:layout_height="100dp"
         android:background="@android:color/transparent"
@@ -61,7 +45,7 @@
 
     <ImageButton
         android:layout_gravity="center_horizontal"
-        android:id="@+id/button9"
+        android:id="@+id/question4"
         android:layout_width="380dp"
         android:layout_height="100dp"
         android:background="@android:color/transparent"
@@ -73,9 +57,9 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/buttonback"
+        android:background="@drawable/button"
         android:text="BACK"
         android:textColor="@color/white" />
 

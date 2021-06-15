@@ -23,7 +23,6 @@ class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
-
         getSupportActionBar()?.hide();
         window.decorView.apply {
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -31,7 +30,12 @@ class Menu : AppCompatActivity() {
         replaceFragment(qrfragment)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomnavigation)
         bottomNavigationView.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
+            when (it.itemId)
+            {
+                R.id.qr_fragment ->{
+                    val intent = Intent(this@Menu, ClientPage::class.java)
+                    startActivity(intent)
+                }
                 R.id.logs_fragment -> {
                     val intent = Intent(this@Menu, ViewLogs::class.java)
                     startActivity(intent)
